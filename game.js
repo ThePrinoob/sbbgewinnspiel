@@ -25,6 +25,7 @@ var products = {
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Ueberraschung_suess.jpg': {laden:'Egli',product:'Süsse Überraschung'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Naturkosmetik.jpg': {laden:'Egli',product:'natürliche Kosmetik-Überraschung'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/27_tibits_cucumbersplash_luzern.jpg': {laden:'Tibits',product:'Cucumbersplash'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/10_coop_cooptogo_bn_biel_thun.jpg': {laden:'Coop To Go',product:'Heissgetränk'},
    //'': {laden:'',product:''},
    
 };
