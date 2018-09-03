@@ -15,8 +15,18 @@ var products = {
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/81_kkiosk_okenergydrink.jpg': {laden:'Kiosk',product:'OK EnergyDrink classic/zero'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/66_ilforno_hotpaninicaprese_olten.jpg': {laden:'Il Forno',product:'Hot Panino Caprese mit Mozzarella, Tomaten, Basilikum'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/23_caffspettacolo_kaffee.jpg': {laden:'Caffe Spettacolo',product:'Kaffee'},
-   'https://gewinnen.sbb.ch/storage/images/products/_productGame/19_sbbpersonalrestaurantpendolino_eistee_olten.jpg': {laden:'Pendolino',product:'Eistee «Freshly Made Today»'}
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/19_sbbpersonalrestaurantpendolino_eistee_olten.jpg': {laden:'Pendolino',product:'Eistee «Freshly Made Today»'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/99_baekerei_reinhard_chf_5_geschenkkarte.jpg': {laden:'Reinhard',product:'CHF 5 Geschenkkarte'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/47_vgeleshoes_cap.jpg': {laden:'Vögele',product:'1 Cap nach Wahl'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_salzige-UEberraschung.jpg': {laden:'Egli',product:'Salzige Überraschung'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/101_Ovo-Rocks_avec.jpg': {laden:'Ave',product:'OVO Rocks'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/12_bckereireinhard_bern.jpg': {laden:'Reinhard',product:'Berliner'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/30_flyingtibercopenhaben_kokosbar_bern.jpg': {laden:'Copenhagen',product:'Kokosbar'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Ueberraschung_suess.jpg': {laden:'Egli',product:'Süsse Überraschung'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Naturkosmetik.jpg': {laden:'Egli',product:'natürliche Kosmetik-Überraschung'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/27_tibits_cucumbersplash_luzern.jpg': {laden:'Tibits',product:'Cucumbersplash'},
    //'': {laden:'',product:''},
+   
 };
 
 var getInfo = function(url) {
@@ -78,7 +88,7 @@ var start = function(count) {
          var lines = document.getElementById('lines');
          let l = document.createElement('tr');
          var info = getInfo(coupon.productImage)
-         c = '<td>'+ort+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+info.laden+'</td><td>'+info.product+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
+         c = '<td>'+(ort.charAt(0).toUpperCase() + ort.slice(1))+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+info.laden+'</td><td>'+info.product+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
          l.innerHTML = c;
          lines.appendChild(l);
       });
