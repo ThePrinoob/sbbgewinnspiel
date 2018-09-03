@@ -1,22 +1,38 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
 
-  <title>SBB Game</title>
+<head>
+   <meta charset="utf-8">
+
+   <title>SBB Game</title>
 
 </head>
 
 <body>
-  <button onclick="start('bern',50);">
-     start
+   <label for="title">Bahnhof</label>
+   <select id="bahnhof">
+      <option value="bern" selected>Bern</option>
+      <option value="olten">Olten</option>
+      <option value="basel">Basel</option>
+   </select>
+   <button onclick="start(50);">
+      start
    </button>
-  <script src="game.js"></script>
-  <table>
-     <thead><tr><th>Station</th><th>Item</th><th>Coupon</th><th>Link</th><th>Valid</th></tr></thead>
-     <tbody id="lines">
-     </tbody>
+   <script src="game.js"></script>
+   <table>
+      <thead>
+         <tr>
+            <th>Station</th>
+            <th>Item</th>
+            <th>Coupon</th>
+            <th>Link</th>
+            <th>Valid</th>
+         </tr>
+      </thead>
+      <tbody id="lines">
+      </tbody>
    </table>
 </body>
+
 </html>

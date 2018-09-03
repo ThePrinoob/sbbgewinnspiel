@@ -44,13 +44,11 @@ var play = function(ort, callback) {
    http.send(params);
 };
 
-var start = function(ort, count) {
+var start = function(count) {
    if(typeof count === 'undefined') {
       count = 50;
    }
-   if(typeof ort === 'undefined') {
-      ort = 'bern';
-   }
+   var ort = document.getElementById('bahnhof').value;
    var i, s;
    for(i = 0; i < count; i++) {
       play(ort, function(coupon) {
