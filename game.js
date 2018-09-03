@@ -25,7 +25,7 @@ var products = {
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Ueberraschung_suess.jpg': {laden:'Egli',product:'Süsse Überraschung'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/Egli_Naturkosmetik.jpg': {laden:'Egli',product:'natürliche Kosmetik-Überraschung'},
    'https://gewinnen.sbb.ch/storage/images/products/_productGame/27_tibits_cucumbersplash_luzern.jpg': {laden:'Tibits',product:'Cucumbersplash'},
-   'https://gewinnen.sbb.ch/storage/images/products/_productGame/10_coop_cooptogo_bn_biel_thun.jpg': {laden:'Coop To Go',product:'Heissgetränk'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/10_coop_cooptogo_bn_biel_thun.jpg': {laden:'Coop To Go',product:'Heissgetränk'}
    //'': {laden:'',product:''},
    
 };
@@ -89,7 +89,7 @@ var start = function(count) {
          var lines = document.getElementById('lines');
          let l = document.createElement('tr');
          var info = getInfo(coupon.productImage)
-         c = '<td>'+(ort.charAt(0).toUpperCase() + ort.slice(1))+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+info.laden+'</td><td>'+info.product+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
+         c = '<td>'+(ort.charAt(0).toUpperCase() + ort.slice(1))+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+info.laden+'</td><td>'+info.product+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'" target="_blank">Link</a></td><td>'+pValid+'</td>';
          l.innerHTML = c;
          lines.appendChild(l);
       });
