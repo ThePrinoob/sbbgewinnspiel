@@ -5,6 +5,20 @@ var ORT = {
    basel: 10140
 };
 
+var products = {
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/59_zopfzpfli_zopf-chnopf.jpg': {laden:'Zopf & Zöpfli',product:'Zopf-Chnopf'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/100_hitzberger_chf_10_geschenkkarte.jpg': {laden:'Hitzberger',product:'CHF 10 Geschenkkarte'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/102_Ovo-Drink_avec.jpg': {laden:'Avec',product:'OVO Drink'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/91_lolipop_crunchy_mellowfizz.jpg': {laden:'Lolipop',product:'Crunchy Mellowfizz'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/82_kkiosk_okmineralwater.jpg': {laden:'Kiosk',product:'OK Mineralwasser'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/94_coop_icetea_50cl.jpg': {laden:'Coop',product:'Coop-Naturaplan Ice Tea (5 dl)'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/81_kkiosk_okenergydrink.jpg': {laden:'Kiosk',product:'OK EnergyDrink classic/zero'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/66_ilforno_hotpaninicaprese_olten.jpg': {laden:'Il Forno',product:'Hot Panino Caprese mit Mozzarella, Tomaten, Basilikum'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/23_caffspettacolo_kaffee.jpg': {laden:'Caffe Spettacolo',product:'Kaffee'},
+   'https://gewinnen.sbb.ch/storage/images/products/_productGame/19_sbbpersonalrestaurantpendolino_eistee_olten.jpg': {laden:'Pendolino',product:'Eistee «Freshly Made Today»'}
+   //'': {laden:'',product:''},
+};
+
 var play = function(ort, callback) {
    var http = new XMLHttpRequest();
    var url = 'https://gewinnen.sbb.ch/api/get-participant';
@@ -56,7 +70,7 @@ var start = function(count) {
          var pValid = valid.getDate() + "." + (valid.getMonth()+1) + "." + valid.getFullYear();
          var lines = document.getElementById('lines');
          let l = document.createElement('tr');
-         c = '<td>'+ort+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+coupon.couponCode+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
+         c = '<td>'+ort+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+products[coupon.productImage]+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
          l.innerHTML = c;
          lines.appendChild(l);
       });
