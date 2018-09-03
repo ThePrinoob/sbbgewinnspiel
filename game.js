@@ -70,7 +70,7 @@ var start = function(count) {
          var pValid = valid.getDate() + "." + (valid.getMonth()+1) + "." + valid.getFullYear();
          var lines = document.getElementById('lines');
          let l = document.createElement('tr');
-         c = '<td>'+ort+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+products[coupon.productImage]+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
+         c = '<td>'+ort+'</td><td><img src="'+coupon.productImage+'" width="50" height="50" /></td><td>'+products[coupon.productImage].laden+'</td><td>'+products[coupon.productImage].product+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
          l.innerHTML = c;
          lines.appendChild(l);
       });
