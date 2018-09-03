@@ -34,7 +34,7 @@ var play = function(ort, callback) {
             if(httpGame.readyState === 4 && httpGame.status === 200) {
                var resGame = JSON.parse(httpGame.responseText);
                if(resGame.result === 'won') {
-                  callback(res);
+                  callback(resGame);
                }
             }
          };
