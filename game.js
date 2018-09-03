@@ -4,9 +4,7 @@ var ORT = {
    bern: 10141,
    basel: 10140
 };
-var WINNER = [];
-var POS = 0;
-var END = 0;
+
 var play = function(ort, callback) {
    var http = new XMLHttpRequest();
    var url = 'https://gewinnen.sbb.ch/api/get-participant';
@@ -34,19 +32,9 @@ var play = function(ort, callback) {
          httpGame.setRequestHeader('auth-key', hash);
          httpGame.onreadystatechange = function() {
             if(httpGame.readyState === 4 && httpGame.status === 200) {
-               POS = POS + 1;
                var resGame = JSON.parse(httpGame.responseText);
                if(resGame.result === 'won') {
                   callback(res);
-               }
-               if(POS === END - 1) {
-                  console.log(WINNER);
-                  callback();
-               }
-            } else if(httpGame.readyState === 4) {
-               POS = POS + 1;
-               if(POS === END - 1) {
-                  callback();
                }
             }
          };
@@ -63,8 +51,6 @@ var start = function(ort, count) {
    if(typeof ort === 'undefined') {
       ort = 'bern';
    }
-   END = count;
-   POS = 0;
    var i, s;
    for(i = 0; i < count; i++) {
       play(ort, function(coupon) {
@@ -72,7 +58,7 @@ var start = function(ort, count) {
          var pValid = valid.getDate() + "." + (valid.getMonth()+1) + "." + valid.getFullYear();
          var lines = document.getElementById('lines');
          let l = document.createElement('tr');
-         c = '<tr><td>'+ort+'</td><td>'+coupon.couponCode+'</td><td>'+coupon.couponCode+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'</td><td>'+pValid+'</td></tr>';
+         c = '<td>'+ort+'</td><td>'+coupon.couponCode+'</td><td>'+coupon.couponCode+'</td><td><a href="https://gewinnen.sbb.ch/coupon/'+coupon.couponCode+'">Link</a></td><td>'+pValid+'</td>';
          l.innerHTML = c;
          lines.appendChild(l);
       });
